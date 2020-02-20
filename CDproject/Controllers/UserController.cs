@@ -54,7 +54,7 @@ namespace CDproject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,AlbumId,Name,Date")] User user)
+        public async Task<IActionResult> Create([Bind("Id,Name,Date")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace CDproject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,AlbumId,Name,Date")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Date")] User user)
         {
             if (id != user.Id)
             {

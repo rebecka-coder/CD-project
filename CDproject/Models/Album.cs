@@ -9,11 +9,14 @@ namespace CDproject.Models
         [Key]
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "Välj namn på artist!")]
         public int ArtistId { get; set; }
-        public string Artist { get; set; }
+
+        [Required(ErrorMessage = "Välj namn på album!")]
         public string Name { get; set; }
-        public int GenreId { get; set; }
-        public int UsernameId { get; set; }
+
+        [Required(ErrorMessage = "Välj namn på användare!")]
+        public int UserId { get; set; }
 
         public Album()
         {

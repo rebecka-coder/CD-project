@@ -11,7 +11,6 @@ namespace CDproject.Data
         }
         public DbSet<Artist> Artist { get; set; }
         public DbSet<Album> Album { get; set; }
-        public DbSet<Genre> Genre { get; set; }
         public DbSet<User> User { get; set; }
     }
 }

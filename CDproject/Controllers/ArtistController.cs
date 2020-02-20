@@ -19,13 +19,13 @@ namespace CDproject.Controllers
             _context = context;
         }
 
-        // GET: CDCollection
+        // GET: Artist
         public async Task<IActionResult> Index()
         {
             return View(await _context.Artist.ToListAsync());
         }
 
-        // GET: CDCollection/Details/5
+        // GET: Artist/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,13 +43,15 @@ namespace CDproject.Controllers
             return View(artist);
         }
 
-        // GET: CDCollection/Create
+        // GET: Artist/Create
         public IActionResult Create()
         {
             return View();
         }
 
-     
+        // POST: Artist/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name")] Artist artist)
@@ -63,7 +65,7 @@ namespace CDproject.Controllers
             return View(artist);
         }
 
-        // GET: CDCollection/Edit/5
+        // GET: Artist/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -79,6 +81,9 @@ namespace CDproject.Controllers
             return View(artist);
         }
 
+        // POST: Artist/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Artist artist)
@@ -111,7 +116,7 @@ namespace CDproject.Controllers
             return View(artist);
         }
 
-        // GET: CDCollection/Delete/5
+        // GET: Artist/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -129,7 +134,7 @@ namespace CDproject.Controllers
             return View(artist);
         }
 
-        // POST: CDCollection/Delete/5
+        // POST: Artist/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

@@ -49,12 +49,10 @@ namespace CDproject.Controllers
             return View();
         }
 
-        // POST: Album/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ArtistId,Artist,Name,GenreId,UsernameId")] Album album)
+        public async Task<IActionResult> Create([Bind("Id,ArtistId,Name,UserId")] Album album)
         {
             if (ModelState.IsValid)
             {
@@ -81,12 +79,10 @@ namespace CDproject.Controllers
             return View(album);
         }
 
-        // POST: Album/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ArtistId,Artist,Name,GenreId,UsernameId")] Album album)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ArtistId,Name,UserId")] Album album)
         {
             if (id != album.Id)
             {
